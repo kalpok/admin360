@@ -1,0 +1,9 @@
+{
+  "name": "admin360",
+  "dependencies": {
+    "admin360": "*",
+    "bootstrap-rtl": "*",
+    "fontawesome": "*",
+    "metisMenu": "*"
+  }
+}
