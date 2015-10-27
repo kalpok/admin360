@@ -13,6 +13,7 @@ class ThemeAssetBundle extends AssetBundle
         'js/app.js',
     ];
     public $depends = [
-        'themes\admin360\assetbundles\Admin360Asset',
+        'yii\web\YiiAsset',
+        'themes\admin360\assetbundles\Admin360Asset'
     ];
 }
