@@ -1,10 +1,9 @@
 <?php
-use core\widgets\Panel;
-use core\widgets\Button;
-use core\widgets\ActionButtons;
+use themes\admin360\widgets\Panel;
+use themes\admin360\widgets\Button;
+use themes\admin360\widgets\ActionButtons;
 
 $this->title = 'داشبورد';
-
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
