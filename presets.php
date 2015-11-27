@@ -12,4 +12,8 @@ return [
         'width' => 150,
         'height' => 150
     ],
+    'gallery-grid' => [
+        'width' => 150,
+        'height' => 60
+    ],
 ];
