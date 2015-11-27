@@ -76,6 +76,17 @@ class ActionButtons extends Widget
                         'options' => $options,
                      ]);
                     break;
+                case 'gallery':
+                    $label = (empty($btnOptions['label'])) ? 'گالری' :  $btnOptions['label'] ;
+                    echo Button::widget([
+                        'label' => $label,
+                        'icon' => 'camera-retro',
+                        'type' => 'info',
+                        'url'=> ['gallery', 'id' => $this->modelID],
+                        'visibleFor' => $visibleFor,
+                        'options' => $options
+                     ]);
+                    break;
                 case 'categoriesIndex':
                      $label = (empty($btnOptions['label'])) ? 'مدیریت دسته ها' :  $btnOptions['label'];
                      echo Button::widget([
