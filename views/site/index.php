@@ -7,7 +7,7 @@ $this->title = 'داشبورد';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
-    <div class="col-sm-12">
+    <!-- <div class="col-sm-12">
         <?php echo Button::widget(['options' => ['class' => 'btn-lg btn-outline dim']]) ?>
         <?php echo Button::widget(['options' => ['class' => 'btn-lg dim']]) ?>
 
@@ -25,10 +25,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo Button::widget(['options' => ['class' => 'btn-lg btn-outline dim'], 'type' => 'danger']) ?>
         <?php echo Button::widget(['options' => ['class' => 'btn-lg dim'], 'type' => 'danger']) ?>
-    </div>
+    </div> -->
 </div>
 <hr />
-<div class="row">
+ <div class="row">
+    <div class="col-sm-12">
+        <h3>به پنل مدیریت وب سایت شرکت فناوری اطلاعات ایرانیان خوش آمدید</h3>
+    </div>
+</div>
+<!-- <div class="row">
     <div class="col-sm-12">
         <?php echo ActionButtons::widget([
                     'modelID' => 10,
@@ -125,4 +130,4 @@ $this->params['breadcrumbs'][] = $this->title;
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
         <?php Panel::end() ?>
     </div>
-</div>
+</div> -->
