@@ -30,7 +30,7 @@ use themes\admin360\widgets\AdminSidebarMenu;
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav">
                 <li class="lg-brand">
-                    <?php echo Html::a('Admin360', Url::home()) ?>
+                    <?php echo Html::a(\Yii::$app->name, Url::home()) ?>
                 </li>
                 <!-- <li class="sidebar-search">
                     <div class="input-group custom-search-form">

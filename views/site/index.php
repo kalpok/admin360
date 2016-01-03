@@ -2,6 +2,7 @@
 use themes\admin360\widgets\Panel;
 use themes\admin360\widgets\Button;
 use themes\admin360\widgets\ActionButtons;
+use themes\admin360\widgets\AdminSidebarMenu;
 
 $this->title = 'داشبورد';
 $this->params['breadcrumbs'][] = $this->title;
@@ -30,9 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <hr />
  <div class="row">
     <div class="col-sm-12">
-        <h3>به پنل مدیریت وب سایت شرکت فناوری اطلاعات ایرانیان خوش آمدید</h3>
+        <h3>به پنل مدیریت وب سایت <?php echo \Yii::$app->name ?> خوش آمدید</h3>
     </div>
 </div>
+ 
 <!-- <div class="row">
     <div class="col-sm-12">
         <?php echo ActionButtons::widget([
