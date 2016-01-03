@@ -11,6 +11,7 @@ use themes\admin360\widgets\AdminSidebarMenu;
     </div>
 
     <ul class="nav navbar-top-links navbar-left">
+        <li><?php echo \Yii::$app->user->identity->email ?></li>
         <li>
             <?php echo Html::a('<i class="fa fa-power-off fa-fw"></i>  خروج', ['/user/auth/logout']) ?>
         </li>
