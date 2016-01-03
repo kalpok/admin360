@@ -36,3 +36,8 @@
 .single-file-upload {
   position: relative;
 }
+.lg-brand a {
+    font-family: "WRoya", "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
