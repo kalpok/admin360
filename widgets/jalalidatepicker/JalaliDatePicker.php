@@ -5,12 +5,22 @@ namespace themes\admin360\widgets\jalalidatepicker;
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use extensions\i18n\I18N;
 use yii\widgets\InputWidget;
+use extensions\i18n\date\Calendar;
+use extensions\i18n\date\DateTime;
 
 class JalaliDatePicker extends InputWidget
 {
     public $jsOptions = [];
     public $events = [];
+    protected $dateTime;
+
+    public function __construct(DateTime $dateTime, $config = [])
+    {
+        $this->dateTime = $dateTime;
+        parent::__construct($config);
+    }
 
     public function init()
     {
@@ -72,7 +82,7 @@ class JalaliDatePicker extends InputWidget
         } elseif ($model->hasErrors($attribute)) {
             $this->value = $model->$attribute;
         } else {
-            $this->value = Yii::$app->date->date('Y/m/d', $model->$attribute, false);
+            $this->value = $this->dateTime->date('Y/m/d', $model->$attribute, false);
         }
     }
 }
