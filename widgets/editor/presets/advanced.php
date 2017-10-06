@@ -12,7 +12,7 @@ return [
                 "PasteText","PasteFromWord",'-',
                 "Maximize",'-',
                 'NumberedList', 'BulletedList', '-',
-                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+                'JustifyRight', 'JustifyCenter', 'JustifyLeft', 'JustifyBlock',
                 '-', 'BidiRtl', 'BidiLtr', '-',
                 'Bold', 'Italic', '-',
                 'TextColor', 'BGColor', '-'
