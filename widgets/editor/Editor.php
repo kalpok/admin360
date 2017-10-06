@@ -16,6 +16,7 @@ class Editor extends CKEditor
         $this->setLanguage();
         $this->setFileUploader();
         $this->setImageUploader();
+        $this->addCustomPlugins();
     }
 
     private function setFileUploader()
@@ -78,6 +79,24 @@ class Editor extends CKEditor
     {
         if (!isset($this->clientOptions['language'])) {
             $this->clientOptions['language'] = 'fa';
+        }
+    }
+
+    private function addCustomPlugins()
+    {
+        if (!isset($this->clientOptions['extraPlugins'])) {
+            $this->clientOptions['extraPlugins'] = 'justify,bidi';
+        }
+    }
+
+    private function registerPluginsJs()
+    {
+        foreach (['justify', 'bidi'] as $plugin) {
+            $this->getView()->registerJs(
+                "CKEDITOR.plugins.addExternal(
+                    '{$plugin}', '/admin/{$plugin}/plugin.js', ''
+                );"
+            );
         }
     }
 }

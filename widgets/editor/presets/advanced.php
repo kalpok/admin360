@@ -12,19 +12,18 @@ return [
                 "PasteText","PasteFromWord",'-',
                 "Maximize",'-',
                 'NumberedList', 'BulletedList', '-',
-                'Image', '-',
-                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'list',
-                    'indent', 'blocks', 'align', 'bidi', '-',
-                'Table', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+                '-', 'BidiRtl', 'BidiLtr', '-',
                 'Bold', 'Italic', '-',
                 'TextColor', 'BGColor', '-'
-
             ],
         ],
         [
             'name' => 'row2',
             'items' => [
+                'Image', '-',
                 'Link', 'Unlink', 'Anchor', '-',
+                'Table', '-',
                 'FontSize', '-',
                 'Blockquote', '-','Format'
             ],
