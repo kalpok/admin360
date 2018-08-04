@@ -41,3 +41,18 @@
     font-size: 18px;
     font-weight: 400;
 }
+
+/* style for select2 */
+.input-small + .select2-container {
+  width: 30% !important;
+}
+.input-medium + .select2-container {
+  width: 50% !important;
+}
+.input-large + .select2-container {
+  width: 70% !important;
+}
+.input-xlarge + .select2-container {
+  width: 90% !important;
+}
+/* end style for select2 */
