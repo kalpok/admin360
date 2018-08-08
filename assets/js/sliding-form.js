@@ -2,7 +2,6 @@ $().ready(function() {
     $(document).on('click', 'a.ajaxcreate, .ajaxupdate, .ajaxview', function(event) {
         event.preventDefault();
         $('div.sliding-form-wrapper').slideUp(300);
-        $('div.sliding-form-wrapper').scroll();
         $.ajax({
             url: $(this).attr('href'),
             type: 'post',
