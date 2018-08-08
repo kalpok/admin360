@@ -11,6 +11,7 @@ class Panel extends Widget
     public $options = array();
     public $visible = true;
     private $content;
+    public $tools;
 
     public function init()
     {
@@ -40,9 +41,19 @@ class Panel extends Widget
     {
         if ($this->title !== false) {
             echo Html::beginTag('div', array('class'=>'panel-heading'));
+            $this->renderTools();
             if ($this->title) {
                 echo '<h3 class="panel-title"> ' . $this->title . '</h3>';
             }
+            echo Html::endTag('div');
+        }
+    }
+
+    public function renderTools()
+    {
+        if ($this->tools) {
+            echo Html::beginTag('div', ['class' => 'btn-group pull-left']);
+            echo $this->tools;
             echo Html::endTag('div');
         }
     }
