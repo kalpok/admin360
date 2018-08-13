@@ -6,6 +6,7 @@ $().ready(function() {
             url: $(this).attr('href'),
             type: 'post',
             dataType: 'json',
+            data: $(this).attr('data-post-params') != undefined ? JSON.parse($(this).attr('data-post-params')) : null,
             success: function(data) {
                 $('div.sliding-form-wrapper').html(data.content).slideDown(500);
             }
