@@ -12,10 +12,12 @@ $().ready(function() {
             }
         });
     });
+
     $(document).on('click', 'a.close-sliding-form-toggle, .close-sliding-form-button', function(event) {
         event.preventDefault();
         $('div.sliding-form-wrapper').slideUp(500);
     });
+
     $(document).on('submit', 'form.sliding-form', function(event) {
         event.preventDefault();
         $('.sliding-form-wrapper button.submit').attr('disabled','disabled');
@@ -39,6 +41,7 @@ $().ready(function() {
             }
         });
     });
+
     $(document).on('click', 'a.ajaxdelete', function(event) {
         event.preventDefault();
         if (confirm($(this).attr('data-confirmmsg'))) {
@@ -53,6 +56,7 @@ $().ready(function() {
             });
         };
     });
+
     $(document).on('click', 'a.ajaxrequest', function(event) {
         event.preventDefault();
         $('div.sliding-form-wrapper').slideUp(500);
@@ -71,12 +75,17 @@ $().ready(function() {
         $.pjax.reload({container:'#'+idOfPjax});
     }
 
-    function showAlert (message, status) {
+    function showAlert(message, status) {
         status = status || 'success';
-        alertDiv = $( '<div class="alert-'+status+' alert fade in"></div>' );
-        alertDiv.html(message);
-        $(".flash-message-container").append(alertDiv);
-        $(".flash-message-container").children().each(function(index) {
+        if (!Array.isArray(message)) {
+            message = [message];
+        }
+        message.forEach(function(message) {
+            alertDiv = $('<div class="alert-' + status + ' alert fade in"></div>');
+            alertDiv.html(message);
+            $("#alerts-area").append(alertDiv);
+        });
+        $("#alerts-area").children().each(function(index) {
             var $alertDiv = $(this);
             setTimeout(function() {
                 $alertDiv.alert('close');
