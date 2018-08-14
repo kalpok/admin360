@@ -1,4 +1,5 @@
 <?php
+
 namespace themes\admin360\widgets;
 
 use yii\base\Widget;
@@ -12,14 +13,24 @@ class Panel extends Widget
     public $visible = true;
     private $content;
     public $tools;
+    public $showCloseButton = false;
 
     public function init()
     {
         parent::init();
         if (empty($this->options['class'])) {
             Html::addCssClass($this->options, 'panel panel-default');
-        }else{
+        } else{
             Html::addCssClass($this->options, 'panel');
+        }
+        if ($this->showCloseButton) {
+            $this->tools = $this->tools . Html::a(
+                    '<span class="glyphicon glyphicon-remove"></span>',
+                    null,
+                    [
+                        'class' => 'close-panel-button'
+                    ]
+                );
         }
         ob_start();
     }
