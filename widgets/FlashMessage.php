@@ -1,4 +1,5 @@
 <?php
+
 namespace themes\admin360\widgets;
 
 use Yii;
@@ -11,18 +12,17 @@ class FlashMessage extends Widget
     public $alertClass;
     public function run()
     {
-        foreach (Yii::$app->session->getAllFlashes() as $type => $message) {
+        foreach (Yii::$app->session->getAllFlashes() as $type => $messages) {
             if (!in_array($type, ['success', 'danger', 'error', 'warning', 'info'])) {
                 $type = 'info';
             }
             $alertType = 'alert-'.$type;
-            if (is_array($message)) {
-                $message = array_pop($message);
+            foreach ($messages as $message) {
+                echo Alert::widget([
+                    'options' => ['class' => "alert {$alertType} {$this->alertClass}"],
+                    'body' => $message
+                ]);
             }
-            echo Alert::widget([
-                'options' => ['class' => "alert {$alertType} {$this->alertClass}"],
-                'body' => $message,
-            ]);
         }
     }
 }
