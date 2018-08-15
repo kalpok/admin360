@@ -13,11 +13,11 @@ $().ready(function() {
         });
     });
 
-    $(document).on('click', 'a.close-sliding-form-button, .close-panel-button', function(event) {
+    $(document).on('click', 'a.close-sliding-form-button', function(event) {
         event.preventDefault();
         $('div.sliding-form-wrapper').slideUp(500);
     });
-    
+
     $(document).on('submit', 'form.sliding-form', function(event) {
         event.preventDefault();
         $('.sliding-form-wrapper button.submit').attr('disabled','disabled');

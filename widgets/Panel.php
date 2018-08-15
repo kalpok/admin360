@@ -24,6 +24,7 @@ class Panel extends Widget
             Html::addCssClass($this->options, 'panel');
         }
         if ($this->showCloseButton) {
+            $this->registerJsForCloseButton();
             $this->tools = $this->tools . Html::a(
                     '<span class="glyphicon glyphicon-remove"></span>',
                     null,
@@ -86,6 +87,27 @@ class Panel extends Widget
                 echo $this->footer;
             }
             echo Html::endTag('div');
+        }
+    }
+
+    public function registerJsForCloseButton()
+    {
+        $this->addId();
+        $view = $this->getView();
+        $view->registerJs("
+            $(document).on('click', 'a.close-panel-button', function(event) {
+                event.preventDefault();
+                $('.panel#{$this->id}').slideUp(500);
+            });
+        ");
+    }
+
+    public function addId()
+    {
+        if (isset($this->options['id'])) {
+            $this->options['id'] .= " {$this->id}";
+        } else {
+            $this->options['id'] = $this->id;
         }
     }
 }
