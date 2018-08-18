@@ -45,6 +45,7 @@ $().ready(function() {
             }
         });
     });
+
     $(document).on('click', 'a.ajaxdelete', function(event) {
         event.preventDefault();
         showLoading();
@@ -61,6 +62,7 @@ $().ready(function() {
             });
         };
     });
+
     $(document).on('click', 'a.ajaxrequest', function(event) {
         event.preventDefault();
         showLoading();
@@ -90,12 +92,17 @@ $().ready(function() {
         $.pjax.reload({container:'#'+idOfPjax});
     }
 
-    function showAlert (message, status) {
+    function showAlert(message, status) {
         status = status || 'success';
-        alertDiv = $( '<div class="alert-'+status+' alert fade in"></div>' );
-        alertDiv.html(message);
-        $(".flash-message-container").append(alertDiv);
-        $(".flash-message-container").children().each(function(index) {
+        if (!Array.isArray(message)) {
+            message = [message];
+        }
+        message.forEach(function(message) {
+            alertDiv = $('<div class="alert-' + status + ' alert fade in"></div>');
+            alertDiv.html(message);
+            $("#alerts-area").append(alertDiv);
+        });
+        $("#alerts-area").children().each(function(index) {
             var $alertDiv = $(this);
             setTimeout(function() {
                 $alertDiv.alert('close');
