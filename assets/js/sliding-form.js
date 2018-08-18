@@ -1,6 +1,7 @@
 $().ready(function() {
     $(document).on('click', 'a.ajaxcreate, .ajaxupdate, .ajaxview', function(event) {
         event.preventDefault();
+        showLoading();
         $('div.sliding-form-wrapper').slideUp(300);
         $.ajax({
             url: $(this).attr('href'),
@@ -8,18 +9,20 @@ $().ready(function() {
             dataType: 'json',
             data: $(this).attr('data-post-params') != undefined ? JSON.parse($(this).attr('data-post-params')) : null,
             success: function(data) {
+                hideLoading();
                 $('div.sliding-form-wrapper').html(data.content).slideDown(500);
             }
         });
     });
 
-    $(document).on('click', 'a.close-sliding-form-toggle, .close-sliding-form-button', function(event) {
+    $(document).on('click', 'a.close-sliding-form-button', function(event) {
         event.preventDefault();
         $('div.sliding-form-wrapper').slideUp(500);
     });
 
     $(document).on('submit', 'form.sliding-form', function(event) {
         event.preventDefault();
+        showLoading();
         $('.sliding-form-wrapper button.submit').attr('disabled','disabled');
         $.ajax({
             url: $(this).attr('action'),
@@ -31,6 +34,7 @@ $().ready(function() {
             processData: false,
             async: false
         }).done(function( data ) {
+            hideLoading();
             if (data.status == 'success' || data.status == 'danger') {
                 $('div.sliding-form-wrapper').slideUp(500);
                 showAlert(data.message, data.status);
@@ -44,6 +48,7 @@ $().ready(function() {
 
     $(document).on('click', 'a.ajaxdelete', function(event) {
         event.preventDefault();
+        showLoading();
         if (confirm($(this).attr('data-confirmmsg'))) {
             $('div.sliding-form-wrapper').slideUp(500);
             $.ajax({
@@ -51,6 +56,7 @@ $().ready(function() {
                 type: 'post',
                 dataType: 'json'
             }).done(function( data ) {
+                hideLoading();
                 showAlert(data.message, data.status);
                 refreshGrid();
             });
@@ -59,16 +65,27 @@ $().ready(function() {
 
     $(document).on('click', 'a.ajaxrequest', function(event) {
         event.preventDefault();
+        showLoading();
         $('div.sliding-form-wrapper').slideUp(500);
         $.ajax({
             url: $(this).attr('href'),
             type: 'post',
             dataType: 'json'
         }).done(function( data ) {
+            hideLoading();
             showAlert(data.message, data.status);
             refreshGrid();
         });
     });
+
+    function showLoading() {
+        loadingDiv = $('<div class="loading-gif"><i class="fa fa-spinner fa-pulse fa-3x"></i></div>');
+        $('div.sliding-form-wrapper').prepend(loadingDiv);
+    }
+
+    function hideLoading() {
+        $('.loading-gif').css('display', 'none');
+    }
 
     function refreshGrid() {
         idOfPjax = $('a.ajaxcreate').attr('data-gridpjaxid');
