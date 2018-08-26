@@ -20,18 +20,18 @@ class Panel extends Widget
         parent::init();
         if (empty($this->options['class'])) {
             Html::addCssClass($this->options, 'panel panel-default');
-        } else{
+        } else {
             Html::addCssClass($this->options, 'panel');
         }
         if ($this->showCloseButton) {
             $this->registerJsForCloseButton();
             $this->tools = $this->tools . Html::a(
-                    '<span class="glyphicon glyphicon-remove"></span>',
-                    null,
-                    [
-                        'class' => 'close-panel-button'
-                    ]
-                );
+                '<span class="glyphicon glyphicon-remove"></span>',
+                null,
+                [
+                    'class' => 'close-panel-button'
+                ]
+            );
         }
         ob_start();
     }

@@ -30,7 +30,7 @@ class ActionButtons extends Widget
                         'url' => ['create'],
                         'label' => $label,
                         'options' => $options,
-                        'icon' => 'plus',
+                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'plus',
                         'type' => 'success',
                         'visibleFor' => $visibleFor,
                     ]);
@@ -41,7 +41,7 @@ class ActionButtons extends Widget
                         'url' => ['update', 'id' => $this->modelID],
                         'label' => $label,
                         'options' => $options,
-                        'icon' => 'edit',
+                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'edit',
                         'type' => 'primary',
                         'visibleFor' => $visibleFor,
                      ]);
@@ -52,7 +52,7 @@ class ActionButtons extends Widget
                     echo Button::widget([
                         'url' => ['delete', 'id' => $this->modelID],
                         'label' => $label,
-                        'icon' => 'times',
+                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'times',
                         'type' => 'danger',
                         'visibleFor' => $visibleFor,
                         'options' => array_merge(
@@ -71,7 +71,7 @@ class ActionButtons extends Widget
                      echo Button::widget([
                         'url' => ['index'],
                         'label' => $label,
-                        'icon' => 'tasks',
+                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'tasks',
                         'type' => 'info',
                         'visibleFor' => $visibleFor,
                         'options' => $options,
@@ -81,7 +81,7 @@ class ActionButtons extends Widget
                     $label = (empty($btnOptions['label'])) ? 'گالری' :  $btnOptions['label'] ;
                     echo Button::widget([
                         'label' => $label,
-                        'icon' => 'camera-retro',
+                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'camera-retro',
                         'type' => 'info',
                         'url'=> ['gallery', 'id' => $this->modelID],
                         'visibleFor' => $visibleFor,
@@ -93,7 +93,7 @@ class ActionButtons extends Widget
                      echo Button::widget([
                         'url' => ['category/index'],
                         'label' => $label,
-                        'icon' => 'tasks',
+                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'tasks',
                         'type' => 'warning',
                         'visibleFor' => $visibleFor,
                         'options' => $options,
