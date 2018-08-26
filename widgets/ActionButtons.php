@@ -25,34 +25,37 @@ class ActionButtons extends Widget
             Html::addCssClass($options, 'btn-app');
             switch ($action) {
                 case 'create':
-                    $label = (empty($btnOptions['label'])) ? 'افزودن' :  $btnOptions['label'];
+                    $label = empty($btnOptions['label']) ? 'افزودن' :  $btnOptions['label'];
+                    $icon = empty($btnOptions['icon']) ? 'plus' : $btnOptions['icon'];
                     echo Button::widget([
                         'url' => ['create'],
                         'label' => $label,
                         'options' => $options,
-                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'plus',
+                        'icon' => $icon,
                         'type' => 'success',
                         'visibleFor' => $visibleFor,
                     ]);
                     break;
                 case 'update':
-                    $label = (empty($btnOptions['label'])) ? 'ویرایش' :  $btnOptions['label'];
+                    $label = empty($btnOptions['label']) ? 'ویرایش' :  $btnOptions['label'];
+                    $icon = empty($btnOptions['icon']) ? 'edit' : $btnOptions['icon'];
                     echo Button::widget([
                         'url' => ['update', 'id' => $this->modelID],
                         'label' => $label,
                         'options' => $options,
-                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'edit',
+                        'icon' => $icon,
                         'type' => 'primary',
                         'visibleFor' => $visibleFor,
                      ]);
 
                     break;
                 case 'delete':
-                    $label = (empty($btnOptions['label'])) ? 'حذف' :  $btnOptions['label'];
+                    $label = empty($btnOptions['label']) ? 'حذف' :  $btnOptions['label'];
+                    $icon = empty($btnOptions['icon']) ? 'times' : $btnOptions['icon'];
                     echo Button::widget([
                         'url' => ['delete', 'id' => $this->modelID],
                         'label' => $label,
-                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'times',
+                        'icon' => $icon,
                         'type' => 'danger',
                         'visibleFor' => $visibleFor,
                         'options' => array_merge(
@@ -67,21 +70,23 @@ class ActionButtons extends Widget
                      ]);
                     break;
                 case 'index':
-                     $label = (empty($btnOptions['label'])) ? 'مدیریت' :  $btnOptions['label'];
+                     $label = empty($btnOptions['label']) ? 'مدیریت' :  $btnOptions['label'];
+                    $icon = empty($btnOptions['icon']) ? 'tasks' : $btnOptions['icon'];
                      echo Button::widget([
                         'url' => ['index'],
                         'label' => $label,
-                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'tasks',
+                        'icon' => $icon,
                         'type' => 'info',
                         'visibleFor' => $visibleFor,
                         'options' => $options,
                      ]);
                     break;
                 case 'gallery':
-                    $label = (empty($btnOptions['label'])) ? 'گالری' :  $btnOptions['label'] ;
+                    $label = empty($btnOptions['label']) ? 'گالری' :  $btnOptions['label'] ;
+                    $icon = empty($btnOptions['icon']) ? 'camera-retro' : $btnOptions['icon'];
                     echo Button::widget([
                         'label' => $label,
-                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'camera-retro',
+                        'icon' => $icon,
                         'type' => 'info',
                         'url'=> ['gallery', 'id' => $this->modelID],
                         'visibleFor' => $visibleFor,
@@ -89,15 +94,16 @@ class ActionButtons extends Widget
                      ]);
                     break;
                 case 'categoriesIndex':
-                     $label = (empty($btnOptions['label'])) ? 'مدیریت دسته ها' :  $btnOptions['label'];
-                     echo Button::widget([
+                    $label = empty($btnOptions['label']) ? 'مدیریت دسته ها' :  $btnOptions['label'];
+                    $icon = empty($btnOptions['icon']) ? 'tasks' : $btnOptions['icon'];
+                    echo Button::widget([
                         'url' => ['category/index'],
                         'label' => $label,
-                        'icon' => $btnOptions['icon'] ? $btnOptions['icon'] : 'tasks',
+                        'icon' => $icon,
                         'type' => 'warning',
                         'visibleFor' => $visibleFor,
                         'options' => $options,
-                     ]);
+                    ]);
                     break;
                 default:
                     $button = $this->setOptions($btnOptions);
