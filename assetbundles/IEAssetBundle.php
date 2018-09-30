@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\assetbundles;
+namespace theme\assetbundles;
 
 use yii\web\AssetBundle;
 

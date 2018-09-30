@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\widgets;
+namespace theme\widgets;
 
 use Yii;
 use yii\helpers\Url;

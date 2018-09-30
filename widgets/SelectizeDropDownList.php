@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\widgets;
+namespace theme\widgets;
 
 class SelectizeDropDownList extends \dosamigos\selectize\SelectizeDropDownList
 {

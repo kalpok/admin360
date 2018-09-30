@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\assetbundles;
+namespace theme\assetbundles;
 
 use yii\web\AssetBundle;
 
@@ -16,7 +16,7 @@ class SbAdminAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        'themes\admin360\assetbundles\FontAwesomeAsset',
-        'themes\admin360\assetbundles\MetisMenuAsset'
+        'theme\assetbundles\FontAwesomeAsset',
+        'theme\assetbundles\MetisMenuAsset'
     ];
 }

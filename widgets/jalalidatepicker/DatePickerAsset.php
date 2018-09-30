@@ -1,6 +1,6 @@
 <?php
 
-namespace themes\admin360\widgets\jalalidatepicker;
+namespace theme\widgets\jalalidatepicker;
 
 use yii\web\AssetBundle;
 
@@ -16,6 +16,6 @@ class DatePickerAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\JqueryAsset',
-        'themes\admin360\assetbundles\BootstrapRTLAsset',
+        'theme\assetbundles\BootstrapRTLAsset',
     ];
 }
