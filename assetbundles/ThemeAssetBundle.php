@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\assetbundles;
+namespace theme\assetbundles;
 
 use yii\web\AssetBundle;
 
@@ -16,6 +16,6 @@ class ThemeAssetBundle extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'themes\admin360\assetbundles\Admin360Asset'
+        'theme\assetbundles\Admin360Asset'
     ];
 }

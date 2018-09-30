@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
-use themes\admin360\widgets\AdminSidebarMenu;
+use theme\widgets\AdminSidebarMenu;
 
 ?>
 

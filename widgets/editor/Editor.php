@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\widgets\editor;
+namespace theme\widgets\editor;
 
 use Yii;
 use yii\helpers\ArrayHelper;

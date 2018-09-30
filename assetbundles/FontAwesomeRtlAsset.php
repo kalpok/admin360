@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\assetbundles;
+namespace theme\assetbundles;
 
 use yii\web\AssetBundle;
 
@@ -10,6 +10,6 @@ class FontAwesomeRtlAsset extends AssetBundle
         'css/font-awesome-rtl.css',
     ];
     public $depends = [
-        'themes\admin360\assetbundles\FontAwesomeAsset',
+        'theme\assetbundles\FontAwesomeAsset',
     ];
 }

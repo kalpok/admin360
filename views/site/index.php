@@ -1,8 +1,8 @@
 <?php
-use themes\admin360\widgets\Panel;
-use themes\admin360\widgets\Button;
-use themes\admin360\widgets\ActionButtons;
-use themes\admin360\widgets\AdminSidebarMenu;
+use theme\widgets\Panel;
+use theme\widgets\Button;
+use theme\widgets\ActionButtons;
+use theme\widgets\AdminSidebarMenu;
 use yii\helpers\Html;
 
 $this->title = 'داشبورد';

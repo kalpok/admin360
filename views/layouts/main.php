@@ -3,9 +3,9 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use core\widgets\Menu;
 use yii\widgets\Breadcrumbs;
-use themes\admin360\widgets\FlashMessage;
-use themes\admin360\assetbundles\IEAssetBundle;
-use themes\admin360\assetbundles\ThemeAssetBundle;
+use theme\widgets\FlashMessage;
+use theme\assetbundles\IEAssetBundle;
+use theme\assetbundles\ThemeAssetBundle;
 
 ThemeAssetBundle::register($this);
 IEAssetBundle::register($this);

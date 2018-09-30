@@ -1,5 +1,5 @@
 <?php
-namespace themes\admin360\assetbundles;
+namespace theme\assetbundles;
 
 use yii\web\AssetBundle;
 
@@ -11,8 +11,8 @@ class Admin360Asset extends AssetBundle
         'css/admin360.css',
     ];
     public $depends = [
-        'themes\admin360\assetbundles\SbAdminAsset',
-        'themes\admin360\assetbundles\BootstrapRTLAsset',
-        'themes\admin360\assetbundles\FontAwesomeRtlAsset',
+        'theme\assetbundles\SbAdminAsset',
+        'theme\assetbundles\BootstrapRTLAsset',
+        'theme\assetbundles\FontAwesomeRtlAsset',
     ];
 }

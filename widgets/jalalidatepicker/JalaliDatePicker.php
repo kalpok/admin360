@@ -1,6 +1,6 @@
 <?php
 
-namespace themes\admin360\widgets\jalalidatepicker;
+namespace theme\widgets\jalalidatepicker;
 
 use Yii;
 use yii\helpers\Html;
