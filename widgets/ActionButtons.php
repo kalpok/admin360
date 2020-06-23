@@ -20,7 +20,7 @@ class ActionButtons extends Widget
         echo '<div class="col-sm-12">';
         foreach ($this->buttons as $action => $btnOptions) {
             $visibleFor = (empty($btnOptions['visibleFor'])) ? null : $btnOptions['visibleFor'];
-            $visible = (empty($btnOptions['visible'])) ? true : $btnOptions['visible'];
+            $visible = !isset($btnOptions['visible']) ? true : $btnOptions['visible'];
             $options = (empty($btnOptions['options'])) ? [] : $btnOptions['options'];
             Html::addCssClass($options, 'btn-app');
             switch ($action) {
